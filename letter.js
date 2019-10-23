@@ -1,17 +1,20 @@
 var Letter = function(secretLetter, isGuessed) {
-    this.secretLetter = "";
+    this.secretLetter = " ";
     this.isGuessed = false;
-    this.inputCheck = function(userInput) {
-        if (userInput === secretLetter) {
-            return this.isGuessed = true;
+    this.showSecret = function() {
+        if (secretLetter === " ") {
+            return " ";
         }
-    }
-    this.guessCheck = function() {
-        if (this.isGuessed === true) {
-            return secretLetter;
+        else if(!isGuessed) {
+            return "_";
         }
         else {
-            return "_";
+            return this.secretLetter;
+        }
+    }
+    this.guessCheck = function(userGuess) {
+        if (userGuess === this.secretLetter) {
+            this.isGuessed = true;
         }
     };
 }
