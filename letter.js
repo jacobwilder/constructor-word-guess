@@ -1,20 +1,21 @@
-var Letter = function(secretLetter, isGuessed) {
-    this.secretLetter = " ";
-    this.isGuessed = false;
+var Letter = function(value) {
+    this.hiddenLet = value;
+    this.guessed = false;
     this.showSecret = function() {
-        if (secretLetter === " ") {
+        if (this.hiddenLet === " ") {
+            this.guessed = true;
             return " ";
         }
-        else if(!isGuessed) {
+        else if(this.guessed === false) {
             return "_";
         }
         else {
-            return this.secretLetter;
+            return this.hiddenLet;
         }
     }
-    this.guessCheck = function(userGuess) {
-        if (userGuess === this.secretLetter) {
-            this.isGuessed = true;
+    this.guess = function(guess) {
+        if (guess === this.hiddenLet) {
+            this.guessed = true;
         }
     };
 }
