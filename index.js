@@ -32,7 +32,7 @@ function gameStart() {
                     console.log("\nTry Again!\n");
                     gameStart();
                 } else if (incorrectLetters.includes(input.userInput) || correctLetters.includes(input.userInput) || input.userInput === "") {
-                    console.log("\nUh Oh!\n");
+                    console.log("\nUh Oh! Incorrect choice or you tried the same letter!\n");
                     gameStart();
                 } else {
                     var wordCheckArr = [];
